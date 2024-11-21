@@ -9,9 +9,12 @@ df = pd.read_csv("athlete_events.csv")
 df["Age"].fillna(df["Age"].median(), inplace= True)
 df = df.drop(["Height", "Weight"], axis= 1)
 
+
+
 # Initiera Dash-applikationend
 app = Dash(__name__)
 
+server = app.server 
 # Layout för Dash-applikationen
 app.layout = html.Div([
     html.H1(
